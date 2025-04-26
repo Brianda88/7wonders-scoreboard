@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7 Wonders Scoreboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <img src="7wonders_logo.png" alt="7 Wonders Logo" class="logo" />
+
+    <!-- Step 1: Player count input -->
+    <div id="setup-screen">
+      <label for="player-count">How many will be playing?</label><br />
+      <input type="number" id="player-count" min="2" max="7" value="3" />
+      <br />
+      <button id="start-game" class="primary">Start</button>
+    </div>
+
+    <!-- Step 2: Enter player names and emojis -->
+    <div id="player-info-screen" style="display: none;"></div>
+
+    <!-- Step 3: Scoreboard -->
+    <div id="scoreboard-screen" style="display: none;">
+      <div id="scoreboard-grid">
+        <div id="scroll-wrapper">
+          <div id="categories-column">
+            <div class="category spacer"></div>
+            <div class="category">⚔️ Military</div>
+            <div class="category">🪙 Gold</div>
+            <div class="category">💎 Wonders</div>
+            <div class="category">🔵 Civilian</div>
+            <div class="category">🟡 Commerce</div>
+            <div class="category">🟣 Guilds</div>
+            <div class="category">🟢 Science</div>
+            <div class="category total-label">🏆 Total</div>
+          </div>
+          <!-- Players columns will be injected here -->
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="undo-change" class="soft-button">↩️ Undo Points</button>
+        <button id="redo-change" class="soft-button">↪️ Redo Points</button>
+        <button id="finish-game" class="soft-button">Game Finished</button>
+        <button id="reset-game" class="soft-button">Reset</button>
+      </div>
+
+      <div id="live-scoreboard-container">
+        <button id="toggle-scoreboard" style="display: none;">Hide Live Scores</button>
+        <div id="live-scoreboard"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="confetti-popup" style="display: none;">
+    <h2 id="winner-text">🎉 Congratulations! 🎉</h2>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

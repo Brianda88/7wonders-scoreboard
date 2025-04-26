@@ -1,0 +1,279 @@
+/* General */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdf6f0;
+  color: #333;
+  text-align: center;
+  padding: 2rem;
+}
+
+.logo {
+  max-width: 300px;
+  margin-bottom: 2rem;
+}
+
+/* Setup screen */
+
+#setup-screen {
+  margin-top: 1rem;
+}
+
+#player-count {
+  font-size: 1rem;
+  padding: 0.4rem;
+  width: 60px;
+  margin: 1rem auto;
+  display: block;
+}
+
+.primary {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  background-color: #ffe6b3;
+  border: 2px solid #e0a96d;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.primary:hover {
+  background-color: #ffd580;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Player info screen */
+
+#player-info-screen .player-entry {
+  background: #fff;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.player-form-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.name-input {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 180px;
+}
+
+.emoji-picker {
+  appearance: none;
+  background-color: #fffaf2;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+  width: 90px;
+  text-align: center;
+  color: black;
+}
+
+/* Scoreboard Layout */
+
+#scoreboard-grid {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+#scroll-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  overflow-x: auto;
+  max-width: 100%;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#categories-column {
+  display: grid;
+  grid-template-rows: repeat(9, 50px); /* Spacer + 7 categories + Total */
+  justify-content: end;
+  align-items: center;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.category {
+  height: 50px;
+  line-height: 50px;
+  font-weight: 600;
+  padding-right: 0.5rem;
+  white-space: nowrap;
+}
+
+.total-label {
+  font-weight: bold;
+}
+
+#players-columns {
+  display: flex;
+  gap: 1rem;
+}
+
+.player-column {
+  display: grid;
+  grid-template-rows: repeat(9, 50px); /* Name + 7 categories + Total */
+  align-items: center;
+  justify-items: center;
+  background-color: #fffaf2;
+  border-radius: 16px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  min-width: 140px;
+}
+
+.player-column h4 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.player-column input {
+  width: 60px;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.total-score {
+  font-weight: bold;
+  margin-top: 0.3rem;
+}
+
+/* Buttons */
+
+.button-row {
+  margin-top: 1rem; 
+  margin-bottom: 1rem; 
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.soft-button {
+  background-color: #ffddee;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  margin: 0.5rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.soft-button:hover,
+#toggle-scoreboard:hover {
+  background-color: #ffcce0;
+  transform: scale(1.05);
+}
+
+#toggle-scoreboard {
+  background-color: #e0f7fa; /* soft blue pastel */
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  margin: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#toggle-scoreboard:hover {
+  background-color: #b2ebf2;
+  transform: scale(1.05);
+}
+
+
+/* Live scoreboard */
+
+#live-scoreboard-container {
+  margin-top: 0.5rem; 
+}
+
+#live-scoreboard {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fffaf2;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.live-player {
+  background: #f4f4f4;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  min-width: 120px;
+}
+
+.live-leader {
+  background-color: #ffe6cc;
+  border: 2px solid #ff9900;
+  font-weight: bold;
+}
+
+/* Confetti popup */
+
+#confetti-popup {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  background: #fff8e1;
+  border: 3px solid #ffb347;
+  border-radius: 20px;
+  padding: 2rem;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  animation: pop-in 0.4s ease;
+}
+
+@keyframes pop-in {
+  from {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -30%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Mobile tweaks */
+
+@media (max-width: 500px) {
+  .player-form-row {
+    flex-direction: column;
+  }
+}
